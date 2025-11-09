@@ -52,15 +52,49 @@
             opacity: 0.8;
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin-left: 2rem;
             transition: opacity 0.3s;
         }
 
         .nav-links a:hover {
             opacity: 0.8;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            color: white;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.3);
+            font-weight: bold;
         }
 
         .main-content {
@@ -320,10 +354,21 @@
             .nav-links {
                 display: flex;
                 gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: flex-end;
             }
 
             .nav-links a {
                 margin-left: 0;
+            }
+
+            .language-switcher {
+                padding: 0.4rem;
+            }
+
+            .lang-btn {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.85rem;
             }
 
             .info-cards {
@@ -378,8 +423,12 @@
         <nav class="nav">
             <a href="index.html" class="logo">📝 ToDo123Pro</a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#features">Features</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#features" data-i18n="nav.features">Features</a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -387,33 +436,147 @@
     <main class="main-content">
         <div class="support-container">
             <div class="support-icon">💬</div>
-            <h1>Need Help?</h1>
-            <p class="support-description">
+            <h1 data-i18n="support.title">Need Help?</h1>
+            <p class="support-description" data-i18n="support.description">
                 We're here to help! If you have any questions, feedback, or need assistance with ToDo123Pro,
                 please don't hesitate to reach out to us.
             </p>
 
             <div class="contact-info">
-                <h3>📧 Contact Us</h3>
+                <h3 data-i18n="support.contactTitle">📧 Contact Us</h3>
                 <a href="mailto:todo123pro@atomicmail.io" class="email-link">todo123pro@atomicmail.io</a>
-                <p class="response-time">We typically respond within 24 hours</p>
+                <p class="response-time" data-i18n="support.responseTime">We typically respond within 24 hours</p>
             </div>
 
             <div class="form-section">
-                <h3>Or Use Our Contact Form</h3>
+                <h3 data-i18n="support.formTitle">Or Use Our Contact Form</h3>
                 <iframe
                     src="https://docs.google.com/forms/d/e/1FAIpQLScV9w5K_jbR-bOVw47vWwLDtRkuUvDuoxCev7bDII5NF72V6Q/viewform?embedded=true"
                     width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
 
             <div class="qna-section">
-                <h2>Frequently Asked Questions</h2>
+                <h2 data-i18n="support.faqTitle">Frequently Asked Questions</h2>
                 
-                <div class="qna-item">
-                    <h3>✅ How do I create a new todo?</h3>
-                    <p>
+                                <div class="qna-item">
+                    <h3 data-i18n="faq.q1.title">✅ How do I create a new todo?</h3>
+                    <p data-i18n="faq.q1.answer">
                         Simply type your todo in the text field at the bottom of the screen and tap the "+" button. 
                         You can also add photos, tag contacts using the @ symbol, and set due dates before creating your todo.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q2.title">✏️ How do I edit or delete a todo?</h3>
+                    <p data-i18n="faq.q2.answer">
+                        To edit a todo, tap on it and select the edit option. To delete, swipe left on the todo item 
+                        and tap the delete button. You can also mark todos as complete by tapping the checkbox next to them.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q3.title">📁 How do folders work?</h3>
+                    <p data-i18n="faq.q3.answer">
+                        Folders help you organize your todos into categories like Work, Personal, Shopping, etc. 
+                        Tap the folder icon at the top to create a new folder, and swipe left on a todo to move it 
+                        to a specific folder. You can also filter todos by folder using the dropdown at the top.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q4.title">📸 How do I add photos to a todo?</h3>
+                    <p data-i18n="faq.q4.answer">
+                        When creating or editing a todo, tap the camera icon to take a new photo, or tap the image 
+                        icon to select photos from your library. You can attach multiple photos to a single todo. 
+                        Tap on any attached photo to view it in full screen.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q5.title">👥 How do I tag contacts in my todos?</h3>
+                    <p data-i18n="faq.q5.answer">
+                        While typing a todo, use the @ symbol followed by a contact name (e.g., "@John"). The app will 
+                        show contact suggestions that you can tap to tag. Tagged contacts appear as chips on your todo, 
+                        and you can tap them to view the contact details or call them directly.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q6.title">📅 How do I set due dates?</h3>
+                    <p data-i18n="faq.q6.answer">
+                        Tap the calendar icon when creating a todo to set a due date. You can choose quick options 
+                        like "Today", "Tomorrow", or select a custom date. Todos with due dates will show when they're 
+                        due, and overdue todos will be highlighted.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q7.title">🔄 How do I reorder my todos?</h3>
+                    <p data-i18n="faq.q7.answer">
+                        Long press on any todo item and drag it to your desired position. This allows you to prioritize 
+                        your tasks in the order that makes sense for you. The order is saved automatically.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q8.title">🔍 How do I filter and find todos?</h3>
+                    <p data-i18n="faq.q8.answer">
+                        Use the filter bar at the top to filter todos by contact, due date, or completion status. 
+                        You can also switch between folders to view todos in specific categories. Multiple filters 
+                        can be applied simultaneously to narrow down your search.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q9.title">📸 Why does ToDo123Pro need access to my camera and photos?</h3>
+                    <p data-i18n="faq.q9.answer">
+                        ToDo123Pro allows you to attach photos to your todos for better context and organization. 
+                        You can take a photo directly or select existing images from your photo library to associate 
+                        with your tasks. This permission is only used when you choose to add photos to your todos.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q10.title">👥 Why does the app need access to my contacts?</h3>
+                    <p data-i18n="faq.q10.answer">
+                        The contacts permission allows you to link contacts to specific todos, making it easy to 
+                        keep track of tasks related to people you know. For example, you can associate a todo 
+                        like "Call John about the meeting" directly with John's contact information. This feature 
+                        is completely optional and only activates when you choose to add contacts to a todo.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q11.title">🔒 Where is my data stored?</h3>
+                    <p data-i18n="faq.q11.answer">
+                        All your todos, photos, and associated data are stored <strong>locally on your device only</strong>. 
+                        We do not upload, sync, or transmit your personal data to any external servers or cloud services. 
+                        Your privacy is our priority - what stays on your device, stays on your device.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q12.title">☁️ Can I back up my data?</h3>
+                    <p data-i18n="faq.q12.answer">
+                        Since all data is stored locally, your todos will be included in your device's regular 
+                        backup (iCloud or iTunes backup). However, there is currently no in-app cloud sync feature, 
+                        which means your data remains completely private and under your control.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q13.title">🌐 Does the app support multiple languages?</h3>
+                    <p data-i18n="faq.q13.answer">
+                        Yes! ToDo123Pro supports multiple languages. You can change the language in the app settings 
+                        to match your preference.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3 data-i18n="faq.q14.title">🎨 Can I customize the app's appearance?</h3>
+                    <p data-i18n="faq.q14.answer">
+                        Yes! The app supports both light and dark themes. You can access theme settings from the 
+                        settings tab to choose your preferred appearance.
                     </p>
                 </div>
 
@@ -535,18 +698,18 @@
             <div class="info-cards">
                 <div class="info-card">
                     <div class="info-card-icon">⚡</div>
-                    <h3>Quick Response</h3>
-                    <p>We typically respond within 24 hours</p>
+                    <h3 data-i18n="info.response.title">Quick Response</h3>
+                    <p data-i18n="info.response.desc">We typically respond within 24 hours</p>
                 </div>
                 <div class="info-card">
                     <div class="info-card-icon">🛠️</div>
-                    <h3>Technical Support</h3>
-                    <p>Help with bugs and issues</p>
+                    <h3 data-i18n="info.technical.title">Technical Support</h3>
+                    <p data-i18n="info.technical.desc">Help with bugs and issues</p>
                 </div>
                 <div class="info-card">
                     <div class="info-card-icon">💡</div>
-                    <h3>Feature Requests</h3>
-                    <p>We love your ideas!</p>
+                    <h3 data-i18n="info.features.title">Feature Requests</h3>
+                    <p data-i18n="info.features.desc">We love your ideas!</p>
                 </div>
             </div>
         </div>
@@ -554,12 +717,151 @@
 
     <footer class="footer">
         <div>
-            <a href="index.html">Home</a>
-            <a href="index.html#features">Features</a>
-            <a href="privacy-en.html">Privacy Policy</a>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="index.html#features" data-i18n="nav.features">Features</a>
+            <a href="privacy-en.html" data-i18n="nav.privacy">Privacy Policy</a>
         </div>
-        <p style="margin-top: 1rem; opacity: 0.8;">&copy; 2025 ToDo123Pro. All rights reserved.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;" data-i18n="footer.copyright">&copy; 2025 ToDo123Pro. All rights reserved.</p>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.features': 'Features',
+                'nav.privacy': 'Privacy Policy',
+                'footer.copyright': '© 2025 ToDo123Pro. All rights reserved.',
+                'support.title': 'Need Help?',
+                'support.description': "We're here to help! If you have any questions, feedback, or need assistance with ToDo123Pro, please don't hesitate to reach out to us.",
+                'support.contactTitle': '📧 Contact Us',
+                'support.responseTime': 'We typically respond within 24 hours',
+                'support.formTitle': 'Or Use Our Contact Form',
+                'support.faqTitle': 'Frequently Asked Questions',
+                'faq.q1.title': '✅ How do I create a new todo?',
+                'faq.q1.answer': 'Simply type your todo in the text field at the bottom of the screen and tap the "+" button. You can also add photos, tag contacts using the @ symbol, and set due dates before creating your todo.',
+                'faq.q2.title': '✏️ How do I edit or delete a todo?',
+                'faq.q2.answer': 'To edit a todo, tap on it and select the edit option. To delete, swipe left on the todo item and tap the delete button. You can also mark todos as complete by tapping the checkbox next to them.',
+                'faq.q3.title': '📁 How do folders work?',
+                'faq.q3.answer': 'Folders help you organize your todos into categories like Work, Personal, Shopping, etc. Tap the folder icon at the top to create a new folder, and swipe left on a todo to move it to a specific folder. You can also filter todos by folder using the dropdown at the top.',
+                'faq.q4.title': '📸 How do I add photos to a todo?',
+                'faq.q4.answer': 'When creating or editing a todo, tap the camera icon to take a new photo, or tap the image icon to select photos from your library. You can attach multiple photos to a single todo. Tap on any attached photo to view it in full screen.',
+                'faq.q5.title': '👥 How do I tag contacts in my todos?',
+                'faq.q5.answer': 'While typing a todo, use the @ symbol followed by a contact name (e.g., "@John"). The app will show contact suggestions that you can tap to tag. Tagged contacts appear as chips on your todo, and you can tap them to view the contact details or call them directly.',
+                'faq.q6.title': '📅 How do I set due dates?',
+                'faq.q6.answer': 'Tap the calendar icon when creating a todo to set a due date. You can choose quick options like "Today", "Tomorrow", or select a custom date. Todos with due dates will show when they\'re due, and overdue todos will be highlighted.',
+                'faq.q7.title': '🔄 How do I reorder my todos?',
+                'faq.q7.answer': 'Long press on any todo item and drag it to your desired position. This allows you to prioritize your tasks in the order that makes sense for you. The order is saved automatically.',
+                'faq.q8.title': '🔍 How do I filter and find todos?',
+                'faq.q8.answer': 'Use the filter bar at the top to filter todos by contact, due date, or completion status. You can also switch between folders to view todos in specific categories. Multiple filters can be applied simultaneously to narrow down your search.',
+                'faq.q9.title': '📸 Why does ToDo123Pro need access to my camera and photos?',
+                'faq.q9.answer': 'ToDo123Pro allows you to attach photos to your todos for better context and organization. You can take a photo directly or select existing images from your photo library to associate with your tasks. This permission is only used when you choose to add photos to your todos.',
+                'faq.q10.title': '👥 Why does the app need access to my contacts?',
+                'faq.q10.answer': 'The contacts permission allows you to link contacts to specific todos, making it easy to keep track of tasks related to people you know. For example, you can associate a todo like "Call John about the meeting" directly with John\'s contact information. This feature is completely optional and only activates when you choose to add contacts to a todo.',
+                'faq.q11.title': '🔒 Where is my data stored?',
+                'faq.q11.answer': 'All your todos, photos, and associated data are stored <strong>locally on your device only</strong>. We do not upload, sync, or transmit your personal data to any external servers or cloud services. Your privacy is our priority - what stays on your device, stays on your device.',
+                'faq.q12.title': '☁️ Can I back up my data?',
+                'faq.q12.answer': 'Since all data is stored locally, your todos will be included in your device\'s regular backup (iCloud or iTunes backup). However, there is currently no in-app cloud sync feature, which means your data remains completely private and under your control.',
+                'faq.q13.title': '🌐 Does the app support multiple languages?',
+                'faq.q13.answer': 'Yes! ToDo123Pro supports multiple languages. You can change the language in the app settings to match your preference.',
+                'faq.q14.title': '🎨 Can I customize the app\'s appearance?',
+                'faq.q14.answer': 'Yes! The app supports both light and dark themes. You can access theme settings from the settings tab to choose your preferred appearance.',
+                'info.response.title': 'Quick Response',
+                'info.response.desc': 'We typically respond within 24 hours',
+                'info.technical.title': 'Technical Support',
+                'info.technical.desc': 'Help with bugs and issues',
+                'info.features.title': 'Feature Requests',
+                'info.features.desc': 'We love your ideas!'
+            },
+            de: {
+                'nav.home': 'Startseite',
+                'nav.features': 'Funktionen',
+                'nav.privacy': 'Datenschutz',
+                'footer.copyright': '© 2025 ToDo123Pro. Alle Rechte vorbehalten.',
+                'support.title': 'Brauchen Sie Hilfe?',
+                'support.description': 'Wir sind für Sie da! Wenn Sie Fragen, Feedback haben oder Unterstützung bei ToDo123Pro benötigen, zögern Sie nicht, uns zu kontaktieren.',
+                'support.contactTitle': '📧 Kontaktieren Sie uns',
+                'support.responseTime': 'Wir antworten normalerweise innerhalb von 24 Stunden',
+                'support.formTitle': 'Oder nutzen Sie unser Kontaktformular',
+                'support.faqTitle': 'Häufig gestellte Fragen',
+                'faq.q1.title': '✅ Wie erstelle ich eine neue Aufgabe?',
+                'faq.q1.answer': 'Geben Sie einfach Ihre Aufgabe in das Textfeld am unteren Bildschirmrand ein und tippen Sie auf die Schaltfläche "+". Sie können auch Fotos hinzufügen, Kontakte mit dem @-Symbol markieren und Fälligkeitstermine festlegen, bevor Sie Ihre Aufgabe erstellen.',
+                'faq.q2.title': '✏️ Wie bearbeite oder lösche ich eine Aufgabe?',
+                'faq.q2.answer': 'Um eine Aufgabe zu bearbeiten, tippen Sie darauf und wählen Sie die Bearbeitungsoption. Zum Löschen wischen Sie nach links über die Aufgabe und tippen auf die Löschen-Schaltfläche. Sie können Aufgaben auch als erledigt markieren, indem Sie auf das Kontrollkästchen daneben tippen.',
+                'faq.q3.title': '📁 Wie funktionieren Ordner?',
+                'faq.q3.answer': 'Ordner helfen Ihnen, Ihre Aufgaben in Kategorien wie Arbeit, Privat, Einkaufen usw. zu organisieren. Tippen Sie auf das Ordnersymbol oben, um einen neuen Ordner zu erstellen, und wischen Sie nach links über eine Aufgabe, um sie in einen bestimmten Ordner zu verschieben. Sie können Aufgaben auch nach Ordnern filtern, indem Sie das Dropdown-Menü oben verwenden.',
+                'faq.q4.title': '📸 Wie füge ich Fotos zu einer Aufgabe hinzu?',
+                'faq.q4.answer': 'Beim Erstellen oder Bearbeiten einer Aufgabe tippen Sie auf das Kamerasymbol, um ein neues Foto aufzunehmen, oder auf das Bildsymbol, um Fotos aus Ihrer Bibliothek auszuwählen. Sie können mehrere Fotos an eine einzelne Aufgabe anhängen. Tippen Sie auf ein angehängtes Foto, um es im Vollbildmodus anzuzeigen.',
+                'faq.q5.title': '👥 Wie markiere ich Kontakte in meinen Aufgaben?',
+                'faq.q5.answer': 'Verwenden Sie beim Eingeben einer Aufgabe das @-Symbol gefolgt von einem Kontaktnamen (z. B. "@Max"). Die App zeigt Kontaktvorschläge an, auf die Sie tippen können, um sie zu markieren. Markierte Kontakte erscheinen als Chips auf Ihrer Aufgabe, und Sie können darauf tippen, um die Kontaktdetails anzuzeigen oder sie direkt anzurufen.',
+                'faq.q6.title': '📅 Wie setze ich Fälligkeitstermine?',
+                'faq.q6.answer': 'Tippen Sie beim Erstellen einer Aufgabe auf das Kalendersymbol, um ein Fälligkeitsdatum festzulegen. Sie können Schnelloptionen wie "Heute", "Morgen" wählen oder ein benutzerdefiniertes Datum auswählen. Aufgaben mit Fälligkeitsdaten zeigen an, wann sie fällig sind, und überfällige Aufgaben werden hervorgehoben.',
+                'faq.q7.title': '🔄 Wie ordne ich meine Aufgaben neu an?',
+                'faq.q7.answer': 'Drücken Sie lange auf ein beliebiges Aufgabenelement und ziehen Sie es an die gewünschte Position. So können Sie Ihre Aufgaben in der Reihenfolge priorisieren, die für Sie sinnvoll ist. Die Reihenfolge wird automatisch gespeichert.',
+                'faq.q8.title': '🔍 Wie filtere und finde ich Aufgaben?',
+                'faq.q8.answer': 'Verwenden Sie die Filterleiste oben, um Aufgaben nach Kontakt, Fälligkeitsdatum oder Erledigungsstatus zu filtern. Sie können auch zwischen Ordnern wechseln, um Aufgaben in bestimmten Kategorien anzuzeigen. Mehrere Filter können gleichzeitig angewendet werden, um Ihre Suche einzugrenzen.',
+                'faq.q9.title': '📸 Warum benötigt ToDo123Pro Zugriff auf meine Kamera und Fotos?',
+                'faq.q9.answer': 'ToDo123Pro ermöglicht es Ihnen, Fotos an Ihre Aufgaben anzuhängen, um besseren Kontext und Organisation zu bieten. Sie können ein Foto direkt aufnehmen oder vorhandene Bilder aus Ihrer Fotobibliothek auswählen, um sie mit Ihren Aufgaben zu verknüpfen. Diese Berechtigung wird nur verwendet, wenn Sie sich entscheiden, Fotos zu Ihren Aufgaben hinzuzufügen.',
+                'faq.q10.title': '👥 Warum benötigt die App Zugriff auf meine Kontakte?',
+                'faq.q10.answer': 'Die Kontaktberechtigung ermöglicht es Ihnen, Kontakte mit bestimmten Aufgaben zu verknüpfen, was es einfach macht, Aufgaben zu verfolgen, die mit Personen zu tun haben, die Sie kennen. Zum Beispiel können Sie eine Aufgabe wie "Max wegen des Meetings anrufen" direkt mit Max\' Kontaktinformationen verknüpfen. Diese Funktion ist völlig optional und wird nur aktiviert, wenn Sie sich entscheiden, Kontakte zu einer Aufgabe hinzuzufügen.',
+                'faq.q11.title': '🔒 Wo werden meine Daten gespeichert?',
+                'faq.q11.answer': 'Alle Ihre Aufgaben, Fotos und zugehörigen Daten werden <strong>ausschließlich lokal auf Ihrem Gerät</strong> gespeichert. Wir laden Ihre persönlichen Daten nicht hoch, synchronisieren sie nicht und übertragen sie nicht an externe Server oder Cloud-Dienste. Ihre Privatsphäre hat für uns Priorität - was auf Ihrem Gerät bleibt, bleibt auf Ihrem Gerät.',
+                'faq.q12.title': '☁️ Kann ich meine Daten sichern?',
+                'faq.q12.answer': 'Da alle Daten lokal gespeichert werden, werden Ihre Aufgaben in der regulären Sicherung Ihres Geräts (iCloud- oder iTunes-Backup) enthalten sein. Es gibt derzeit jedoch keine In-App-Cloud-Synchronisierungsfunktion, was bedeutet, dass Ihre Daten vollständig privat bleiben und unter Ihrer Kontrolle stehen.',
+                'faq.q13.title': '🌐 Unterstützt die App mehrere Sprachen?',
+                'faq.q13.answer': 'Ja! ToDo123Pro unterstützt mehrere Sprachen. Sie können die Sprache in den App-Einstellungen ändern, um Ihre Präferenz anzupassen.',
+                'faq.q14.title': '🎨 Kann ich das Aussehen der App anpassen?',
+                'faq.q14.answer': 'Ja! Die App unterstützt sowohl helle als auch dunkle Themes. Sie können auf die Theme-Einstellungen über die Registerkarte Einstellungen zugreifen, um Ihr bevorzugtes Erscheinungsbild auszuwählen.',
+                'info.response.title': 'Schnelle Antwort',
+                'info.response.desc': 'Wir antworten normalerweise innerhalb von 24 Stunden',
+                'info.technical.title': 'Technischer Support',
+                'info.technical.desc': 'Hilfe bei Fehlern und Problemen',
+                'info.features.title': 'Feature-Anfragen',
+                'info.features.desc': 'Wir lieben Ihre Ideen!'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === lang.toUpperCase()) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update privacy policy link in footer
+            const privacyLinks = document.querySelectorAll('a[href*="privacy"]');
+            privacyLinks.forEach(link => {
+                if (link.getAttribute('data-i18n') === 'nav.privacy') {
+                    link.href = lang === 'de' ? 'privacy-de.html' : 'privacy-en.html';
+                }
+            });
+        }
+
+        // Load preferred language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            if (savedLang !== 'en') {
+                switchLanguage(savedLang);
+            }
+        });
+    </script>
 </body>
 
 </html>
