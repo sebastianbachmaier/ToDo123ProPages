@@ -126,6 +126,41 @@
             transform: translateY(0);
         }
 
+        .qna-section {
+            text-align: left;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .qna-section h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .qna-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .qna-item h3 {
+            color: #667eea;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qna-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
         .info-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -262,7 +297,46 @@
                 src="https://docs.google.com/forms/d/e/1FAIpQLScV9w5K_jbR-bOVw47vWwLDtRkuUvDuoxCev7bDII5NF72V6Q/viewform?embedded=true"
                 width="480" height="713" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
 
+            <div class="qna-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="qna-item">
+                    <h3>📸 Why does ToDo123Pro need access to my camera and photos?</h3>
+                    <p>
+                        ToDo123Pro allows you to attach photos to your todos for better context and organization. 
+                        You can take a photo directly or select existing images from your photo library to associate 
+                        with your tasks. This permission is only used when you choose to add photos to your todos.
+                    </p>
+                </div>
 
+                <div class="qna-item">
+                    <h3>👥 Why does the app need access to my contacts?</h3>
+                    <p>
+                        The contacts permission allows you to link contacts to specific todos, making it easy to 
+                        keep track of tasks related to people you know. For example, you can associate a todo 
+                        like "Call John about the meeting" directly with John's contact information. This feature 
+                        is completely optional and only activates when you choose to add contacts to a todo.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3>🔒 Where is my data stored?</h3>
+                    <p>
+                        All your todos, photos, and associated data are stored <strong>locally on your device only</strong>. 
+                        We do not upload, sync, or transmit your personal data to any external servers or cloud services. 
+                        Your privacy is our priority - what stays on your device, stays on your device.
+                    </p>
+                </div>
+
+                <div class="qna-item">
+                    <h3>☁️ Can I back up my data?</h3>
+                    <p>
+                        Since all data is stored locally, your todos will be included in your device's regular 
+                        backup (iCloud or iTunes backup). However, there is currently no in-app cloud sync feature, 
+                        which means your data remains completely private and under your control.
+                    </p>
+                </div>
+            </div>
 
             <div class="info-cards">
                 <div class="info-card">
