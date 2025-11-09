@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1284" height="2778" viewBox="0 0 1284 2778" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1284" height="2778" fill="#ffffff"/>
+  
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2f95dc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a5f8f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1284" height="2778" fill="url(#bgGrad)"/>
+  
+  <!-- Main icon circle -->
+  <circle cx="642" cy="1254.18" r="314.58" fill="url(#iconGrad)" opacity="0.95"/>
+  
+  <!-- Checklist elements on icon -->
+  <g transform="translate(484.71000000000004, 1119.3600000000001)">
+    <!-- List lines -->
+    <rect x="112.35" y="44.94" width="202.23" height="26.964" rx="13.482" fill="#ffffff" opacity="0.95"/>
+    <rect x="112.35" y="157.29" width="224.7" height="26.964" rx="13.482" fill="#ffffff" opacity="0.95"/>
+    <rect x="112.35" y="269.64" width="179.76" height="26.964" rx="13.482" fill="#ffffff" opacity="0.95"/>
+    
+    <!-- Checkmark circles -->
+    <circle cx="44.94" cy="58.422" r="40.446" fill="#ffffff" opacity="0.4"/>
+    <circle cx="44.94" cy="170.772" r="40.446" fill="#ffffff" opacity="0.4"/>
+    <circle cx="44.94" cy="283.122" r="40.446" fill="#ffffff"/>
+    
+    <!-- Checkmark -->
+    <path d="M 31.458000000000002 283.122 L 42.693 298.851 L 58.422 271.887" 
+          stroke="#2f95dc" stroke-width="8.988" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- App name -->
+  <text x="642" y="1793.46" 
+        font-family="Arial, sans-serif" font-size="112.35" font-weight="bold" 
+        fill="#2f95dc" text-anchor="middle">ToDo123 Pro</text>
+  
+  <!-- Tagline -->
+  <text x="642" y="1928.28" 
+        font-family="Arial, sans-serif" font-size="53.928" 
+        fill="#1a5f8f" text-anchor="middle" opacity="0.7">Your tasks, organized</text>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="48" height="48" rx="7.199999999999999" fill="#2f95dc"/>
+  
+  <!-- Simplified checkmark -->
+  <circle cx="24" cy="24" r="12" fill="#ffffff"/>
+  <path d="M 19.200000000000003 24 L 22.56 28.799999999999997 L 29.759999999999998 20.16" 
+        stroke="#2f95dc" stroke-width="3.84" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get support for ToDo123Pro - Contact us for help and assistance">
     <title>Support - ToDo123Pro</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         * {
             margin: 0;
@@ -17,7 +19,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2f95dc 0%, #1a5f8f 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -46,10 +48,18 @@
             text-decoration: none;
             color: white;
             transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
         }
 
         .logo:hover {
             opacity: 0.8;
+        }
+        
+        .logo img {
+            height: 32px;
+            width: 32px;
+            margin-right: 0.5rem;
         }
 
         .nav-links {
@@ -123,7 +133,7 @@
         }
 
         h1 {
-            color: #667eea;
+            color: #2f95dc;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
@@ -139,7 +149,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2f95dc 0%, #1a5f8f 100%);
             color: white;
             padding: 1.2rem 3rem;
             border-radius: 50px;
@@ -161,22 +171,22 @@
         }
 
         .contact-info {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            background: linear-gradient(135deg, #2f95dc15 0%, #1a5f8f15 100%);
             padding: 2rem;
             border-radius: 15px;
             margin: 2rem 0;
-            border: 2px solid #667eea30;
+            border: 2px solid #2f95dc30;
         }
 
         .contact-info h3 {
-            color: #667eea;
+            color: #2f95dc;
             font-size: 1.3rem;
             margin-bottom: 1rem;
         }
 
         .email-link {
             display: inline-block;
-            color: #667eea;
+            color: #2f95dc;
             font-size: 1.2rem;
             font-weight: 600;
             text-decoration: none;
@@ -184,14 +194,14 @@
             background: white;
             border-radius: 10px;
             transition: all 0.3s;
-            border: 2px solid #667eea;
+            border: 2px solid #2f95dc;
         }
 
         .email-link:hover {
-            background: #667eea;
+            background: #2f95dc;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 15px rgba(47, 149, 220, 0.3);
         }
 
         .response-time {
@@ -208,7 +218,7 @@
         }
 
         .form-section h3 {
-            color: #667eea;
+            color: #2f95dc;
             font-size: 1.2rem;
             margin-bottom: 1rem;
             text-align: center;
@@ -228,7 +238,7 @@
         }
 
         .qna-section h2 {
-            color: #667eea;
+            color: #2f95dc;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             text-align: center;
@@ -242,7 +252,7 @@
         }
 
         .qna-item h3 {
-            color: #667eea;
+            color: #2f95dc;
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
             display: flex;
@@ -279,7 +289,7 @@
         }
 
         .info-card h3 {
-            color: #667eea;
+            color: #2f95dc;
             font-size: 1rem;
             margin-bottom: 0.5rem;
         }
@@ -421,7 +431,10 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="index.html" class="logo">📝 ToDo123Pro</a>
+            <a href="index.html" class="logo">
+                <img src="images/icon.svg" alt="ToDo123Pro">
+                ToDo123Pro
+            </a>
             <div class="nav-links">
                 <a href="index.html" data-i18n="nav.home">Home</a>
                 <a href="index.html#features" data-i18n="nav.features">Features</a>

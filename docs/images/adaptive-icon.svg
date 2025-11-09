@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(179.2, 179.2)">
+    <!-- Gradient -->
+    <defs>
+      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#2f95dc;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#1a5f8f;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Icon circle -->
+    <circle cx="332.8" cy="332.8" r="299.52000000000004" fill="url(#grad)"/>
+    
+    <!-- Checklist icon -->
+    <g transform="translate(166.4, 166.4)">
+      <!-- List lines -->
+      <rect x="99.84" y="33.28" width="199.68" height="26.624000000000002" rx="13.312000000000001" fill="#ffffff" opacity="0.9"/>
+      <rect x="99.84" y="153.08800000000002" width="232.95999999999998" height="26.624000000000002" rx="13.312000000000001" fill="#ffffff" opacity="0.9"/>
+      <rect x="99.84" y="272.896" width="186.36800000000002" height="26.624000000000002" rx="13.312000000000001" fill="#ffffff" opacity="0.9"/>
+      
+      <!-- Checkmark circles -->
+      <circle cx="33.28" cy="46.592000000000006" r="39.936" fill="#ffffff" opacity="0.3"/>
+      <circle cx="33.28" cy="166.4" r="39.936" fill="#ffffff" opacity="0.3"/>
+      <circle cx="33.28" cy="286.208" r="39.936" fill="#ffffff"/>
+      
+      <!-- Checkmark -->
+      <path d="M 19.968 286.208 L 31.948800000000002 302.848 L 46.592000000000006 276.224" 
+            stroke="#2f95dc" stroke-width="7.9872000000000005" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

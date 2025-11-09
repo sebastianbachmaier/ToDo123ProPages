@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ToDo123Pro - The ultimate task management app for organizing your life efficiently">
     <title>ToDo123Pro - Smart Task Management</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         * {
             margin: 0;
@@ -19,7 +21,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2f95dc 0%, #1a5f8f 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -41,6 +43,16 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo img {
+            height: 32px;
+            width: 32px;
+            margin-right: 0.5rem;
         }
 
         .nav-links a {
@@ -55,7 +67,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2f95dc 0%, #1a5f8f 100%);
             color: white;
             padding: 8rem 2rem 6rem;
             text-align: center;
@@ -78,7 +90,7 @@
         .cta-button {
             display: inline-block;
             background: white;
-            color: #667eea;
+            color: #2f95dc;
             padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -108,7 +120,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #667eea;
+            color: #2f95dc;
         }
 
         .feature-grid {
@@ -138,7 +150,7 @@
         }
 
         .feature-card h3 {
-            color: #667eea;
+            color: #2f95dc;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -156,7 +168,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #667eea;
+            color: #2f95dc;
         }
 
         .benefit-list {
@@ -175,14 +187,14 @@
         }
 
         .benefit-item .check {
-            color: #667eea;
+            color: #2f95dc;
             font-size: 1.5rem;
             margin-right: 1rem;
             flex-shrink: 0;
         }
 
         .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2f95dc 0%, #1a5f8f 100%);
             color: white;
             padding: 5rem 2rem;
             text-align: center;
@@ -216,7 +228,7 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: #667eea;
+            color: #2f95dc;
         }
 
         .footer-section a {
@@ -279,7 +291,10 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <div class="logo">📝 ToDo123Pro</div>
+            <div class="logo">
+                <img src="images/icon.svg" alt="ToDo123Pro">
+                ToDo123Pro
+            </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#benefits">Benefits</a>

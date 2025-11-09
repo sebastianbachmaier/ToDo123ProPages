@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="204.8" fill="#2f95dc"/>
+  
+  <!-- Decorative gradient overlay -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2f95dc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a5f8f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="204.8" fill="url(#grad1)"/>
+  
+  <!-- Checklist icon -->
+  <g transform="translate(256, 256)">
+    <!-- List lines -->
+    <rect x="153.6" y="51.2" width="307.2" height="40.96" rx="20.48" fill="#ffffff" opacity="0.9"/>
+    <rect x="153.6" y="235.52" width="358.4" height="40.96" rx="20.48" fill="#ffffff" opacity="0.9"/>
+    <rect x="153.6" y="419.84" width="286.72" height="40.96" rx="20.48" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Checkmark circles -->
+    <circle cx="51.2" cy="71.68" r="61.44" fill="#ffffff" opacity="0.3"/>
+    <circle cx="51.2" cy="256" r="61.44" fill="#ffffff" opacity="0.3"/>
+    <circle cx="51.2" cy="440.32" r="61.44" fill="#ffffff"/>
+    
+    <!-- Checkmark -->
+    <path d="M 30.72 440.32 L 49.152 465.92 L 71.68 424.96" 
+          stroke="#2f95dc" stroke-width="12.288" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
